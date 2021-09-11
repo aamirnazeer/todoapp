@@ -140,3 +140,20 @@ select {
   background: white;
   color: #ff6f47;
 }
+
+@media (max-width: 768px) {
+  form {
+    display: float;
+    flex-direction: column;
+  }
+  input {
+    max-width: 80vw;
+  }
+  form button {
+    flex-direction: row;
+    display: float;
+  }
+  todo {
+    min-width: 40vw;
+  }
+}
