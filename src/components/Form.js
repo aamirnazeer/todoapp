@@ -1,4 +1,5 @@
 import React from "react";
+let id = 1;
 
 const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
   const inputTextHandler = (e) => {
@@ -6,10 +7,9 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
   };
   const submitTodoHandler = (e) => {
     e.preventDefault();
-    setTodos([
-      ...todos,
-      { text: inputText, completed: false, id: Math.random() * 1000 },
-    ]);
+    if (inputText !== "") {
+      setTodos([...todos, { text: inputText, completed: false, id: id++ }]);
+    }
     setInputText("");
   };
   const statusHandler = (e) => {
@@ -20,6 +20,7 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
       <div>
         <input
           value={inputText}
+          placeholder={"Text here!"}
           onChange={inputTextHandler}
           type="text"
           className="todo-input"
@@ -29,7 +30,7 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
           className="todo-button"
           type="submit"
         >
-          <i className="fas fa-plus-square"></i>
+          <i className="fas fa-plus"></i>
         </button>
       </div>
       <div className="select">

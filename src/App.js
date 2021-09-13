@@ -48,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Aamir's Todo List</h1>
+        <h1>React Todo List</h1>
       </header>
       <Form
         inputText={inputText}
